@@ -1,6 +1,9 @@
 Puppet Module for Ruby Version Manager (RVM)
 ==============================================
 
+**NOTE** This is a fork of maestrodev/puppet-rvm, which seems not to be maintained anymore.
+         To be able to publish this module to the puppet forge, the name has been changed to janschumann-rvm
+                  
 [![Build Status](https://travis-ci.org/maestrodev/puppet-rvm.svg?branch=maestrodev)](https://travis-ci.org/maestrodev/puppet-rvm)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/maestrodev/rvm.svg)](https://forge.puppetlabs.com/maestrodev/rvm)
 [![Puppet Forge](https://img.shields.io/puppetforge/f/maestrodev/rvm.svg)](https://forge.puppetlabs.com/maestrodev/rvm)
