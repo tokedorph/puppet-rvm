@@ -12,8 +12,13 @@ class rvm(
   $key_server=$rvm::params::key_server,
   $gnupg_key_id=$rvm::params::gnupg_key_id) inherits rvm::params {
 
-  if $install_rvm {
 
+  notify {"RVM INIT":
+
+  }
+
+  if $install_rvm {
+    notify {"INSTALL":}
     # rvm has now autolibs enabled by default so let it manage the dependencies
     if $install_dependencies {
       class { 'rvm::dependencies':
