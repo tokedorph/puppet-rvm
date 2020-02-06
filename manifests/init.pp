@@ -13,14 +13,15 @@ class rvm(
   $gnupg_key_id=$rvm::params::gnupg_key_id) inherits rvm::params {
 
 
-  notify {"RVM INIT":
+  notify {"RVM INIT3s":
 
   }
 
   if $install_rvm {
-    notify {"INSTALL":}
+
     # rvm has now autolibs enabled by default so let it manage the dependencies
     if $install_dependencies {
+      notify {"INSTALL DEPS":}
       class { 'rvm::dependencies':
         before => Class['rvm::system']
       }
@@ -38,7 +39,7 @@ class rvm(
       gnupg_key_id => $gnupg_key_id,
     }
   }
-
+  notify {"SYSTEM USER":}
   rvm::system_user{ $system_users: }
   create_resources('rvm_system_ruby', $system_rubies, {'ensure' => present, 'proxy_url' => $proxy_url, 'no_proxy' => $no_proxy})
   if $rvm_gems != {} {

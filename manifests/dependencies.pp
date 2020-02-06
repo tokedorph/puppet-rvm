@@ -1,5 +1,10 @@
 # Install packages needed by RVM when not using autolibs
 class rvm::dependencies {
+
+  notify {"DEPENDENCIES":
+
+  }
+
   case $::operatingsystem {
     'Ubuntu','Debian': { require rvm::dependencies::ubuntu }
     'CentOS','RedHat','Fedora','rhel','Amazon','Scientific': { require rvm::dependencies::centos }
